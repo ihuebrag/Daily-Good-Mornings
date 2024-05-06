@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+import datetime
+
+def get_image_url_for_day(urls_file, day_of_year):
+    with open(urls_file, 'r') as file:
+        urls = file.readlines()
+        return urls[(day_of_year - 1) % len(urls)].strip()
+
+def generate_html_file(image_url, output_file):
+    html_content = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -22,7 +30,7 @@
 
     <section class="homePage"> 
         <div id="dailyImage">
-            <img id="dailyImg" src="testImage.webp" alt="Good Morning Image">
+            <img id="dailyImg" src="{image_url}" alt="Good Morning Image">
         </div>
         <button id="copyButton">Copy</button>
     </section>
@@ -33,3 +41,17 @@
     
 </body>
 </html>
+"""
+    with open(output_file, 'w') as file:
+        file.write(html_content)
+
+def main():
+    urls_file = 'image_urls.txt'  # Path to the file containing image URLs
+    output_file = 'index.html'  # Output HTML file
+    current_day_of_year = datetime.datetime.now().timetuple().tm_yday
+    image_url = get_image_url_for_day(urls_file, current_day_of_year)
+    generate_html_file(image_url, output_file)
+    print("success")
+
+if __name__ == "__main__":
+    main()

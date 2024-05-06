@@ -3,7 +3,7 @@ const copyButton = document.getElementById('copyButton');
 
 copyButton.addEventListener('click', () => {
     copyToClipboard(dailyImg.src);
-});
+})
 
 function writeToCanvas(src) {
     const img = new Image();
@@ -48,4 +48,15 @@ dailyQuoteBtn.addEventListener('mousedown', () => {
 })
 dailyQuoteBtn.addEventListener('mouseout', () => {
     document.querySelector('#dailyImagebtn').classList.remove('dailyQuoteActive');
+})
+
+const dailyImageBtnQuoteView = document.getElementById('dailyImagebtnQuoteView');
+dailyImageBtnQuoteView.addEventListener('mouseover', () => {
+    document.querySelector('dailyQuotebtnQuoteView').classList.add('dailyImgActive');
+})
+dailyImageBtnQuoteView.addEventListener('mousedown', () => {
+    document.querySelector('#dailyQuotebtnQuoteView').classList.add('dailyImgActive');
+})
+dailyImageBtnQuoteView.addEventListener('mouseout', () => {
+    document.querySelector('#dailyQuotebtnQuoteView').classList.remove('dailyImgActive');
 })

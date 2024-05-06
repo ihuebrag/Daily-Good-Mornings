@@ -1,3 +1,11 @@
+<?php
+function get_image_url_for_day($urls_file, $day_of_year) {
+    $urls = file($urls_file, FILE_IGNORE_NEW_LINES);
+    return $urls[($day_of_year - 1) % count($urls)];
+}
+
+function generate_html_file($image_url, $output_file) {
+    $html_content = <<<HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +30,7 @@
 
     <section class="homePage"> 
         <div id="dailyImage">
-            <img id="dailyImg" src="testImage.webp" alt="Good Morning Image">
+            <img id="dailyImg" src="$image_url" alt="Good Morning Image">
         </div>
         <button id="copyButton">Copy</button>
     </section>
@@ -33,3 +41,14 @@
     
 </body>
 </html>
+HTML;
+
+    file_put_contents($output_file, $html_content);
+}
+
+$urls_file = 'image_urls.txt';  // Path to the file containing image URLs
+$output_file = 'index.html';     // Output HTML file
+$current_day_of_year = date('z') + 1; // Get the day of the year (starting from 0)
+$image_url = get_image_url_for_day($urls_file, $current_day_of_year);
+generate_html_file($image_url, $output_file);
+echo "success";
