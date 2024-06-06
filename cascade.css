@@ -1,188 +1,219 @@
 /* General styles */
 body {
-    font-family: 'Inter';
-    font-size: 22px;
-    margin: 0;
-    padding: 1em 2em 1em 2em;
-  }
-  
-  /* Header */
+  font-family: 'Inter';
+  font-size: 22px;
+  margin: 0;
+  padding: 1em 2em 1em 2em;
+}
 
-  .topFrame {
-    background-color: white;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    height: 50%;
-  }
+/* Header */
+
+.topFrame {
+  background-color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+}
 /* Good Morning message */
-  #topFrame h1 {
-    align-items: center;
-    justify-content: center;
-  }
+#topFrame h1 {
+  align-items: center;
+  justify-content: center;
+}
 /* Bottom Right Fixed Compressed Menu*/
-  .bottomCompressedMenu {
-    bottom: 5%;
-    right: 5%;
-    border-radius: 100%;
-    padding: 1em 1em 1em 1em;
-    background-color: #313131;
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: end; /* Change to center */
-  }
-  .bottomCompressedMenu img {
-    width: 50px;
-    height: 50px;
-  }
-  .bottomCompressedMenu:hover{
-    cursor: pointer;
-    transform: scale(1.05);
-  }
-  .bottomCompressedMenu:active {
-    transform: scale(.95);
-    transition: all 0.1s linear;
-  }
+.bottomCompressedMenu {
+  bottom: 5%;
+  right: 5%;
+  border-radius: 100%;
+  padding: 1em 1em 1em 1em;
+  background-color: #313131;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: end; /* Change to center */
+}
+.bottomCompressedMenu img {
+  width: 50px;
+  height: 50px;
+}
+.bottomCompressedMenu:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.bottomCompressedMenu:active {
+  transform: scale(.95);
+  transition: all 0.1s linear;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+.photo {
+    width: 25%; /* 4 photos per row */
+    padding: 5px;
+    box-sizing: border-box;
+}
+.photo img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+
 
 /* Daily Buttons */
-  #topMenuLeft {
-    font-family: inherit;
-    font-size: 16px;
-    width: 100%; /* Adjust width as needed */
-    height: 50px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center; /* Change to center */
-  }
-  button {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Use the same color as its parent element */
-  }
+#topMenuLeft {
+  font-family: inherit;
+  font-size: 16px;
+  width: 100%; /* Adjust width as needed */
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; /* Change to center */
+}
+button {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Use the same color as its parent element */
+}
 /* Daily Image Button */
-  #dailyImagebtn {
-    width: 50%;
-    margin: 0 2%;
-    font-size: 16px;
-    position: relative;
-    border:2px solid #313131;
-    background: #fff;
-    border-radius: 2em;
-    transition: all 0.01s linear;
-    box-shadow: 0 0.6em 1em rgba(0, 0, 0, 0.1);
-  }
-  #dailyImagebtn:hover{
-    cursor: pointer;
-  }
-  #dailyImagebtn:active {
-    transform: scale(0.95);
-  }
-  #dailyImagebtn.dailyQuoteActive {
-    border: none;
-  }
-/* Daily Image Button QUOTE VIEW */
-#dailyImagebtnQuoteView {
+#dailyImagebtn {
   width: 50%;
   margin: 0 2%;
   font-size: 16px;
   position: relative;
+  border:2px solid #313131;
   background: #fff;
-  border: none;
   border-radius: 2em;
   transition: all 0.01s linear;
   box-shadow: 0 0.6em 1em rgba(0, 0, 0, 0.1);
 }
-#dailyImagebtnQuoteView:hover{
-  border: 2px solid #313131;
+#dailyImagebtn:hover{
   cursor: pointer;
 }
-#dailyImagebtnQuoteView:active {
+#dailyImagebtn:active {
   transform: scale(0.95);
+}
+#dailyImagebtn.dailyQuoteActive {
+  border: none;
+}
+/* Daily Image Button QUOTE VIEW */
+#dailyImagebtnQuoteView {
+width: 50%;
+margin: 0 2%;
+font-size: 16px;
+position: relative;
+background: #fff;
+border: none;
+border-radius: 2em;
+transition: all 0.01s linear;
+box-shadow: 0 0.6em 1em rgba(0, 0, 0, 0.1);
+}
+#dailyImagebtnQuoteView:hover{
+border: 2px solid #313131;
+cursor: pointer;
+}
+#dailyImagebtnQuoteView:active {
+transform: scale(0.95);
 }
 
 
 /* Daily Quote Botton */
-  #dailyQuotebtn {
-    width: 50%;
-    margin: 0 2%;
-    font-size: 16px;
-    position: relative;
-    border: none;
-    background: #fff;
-    border-radius: 2em;
-    transition: all 0.01s linear;
-    box-shadow: 0 0.6em 1em rgba(0, 0, 0, 0.1);
-  }
-  #dailyQuotebtn:hover{
-    border:2px solid #313131;
-    cursor: pointer;
-  }
-  #dailyQuotebtn:active {
-    border:2px solid #313131;
-    transform: scale(0.95);
-  }
-  /* Daily Quote Botton in Quote View*/
-  #dailyQuotebtnQuoteView {
-    width: 50%;
-    margin: 0 2%;
-    font-size: 16px;
-    position: relative;
-    border: 2px solid #313131;
-    background: #fff;
-    border-radius: 2em;
-    transition: all 0.01s linear;
-    box-shadow: 0 0.6em 1em rgba(0, 0, 0, 0.1);
-  }
-  #dailyQuotebtnQuoteView:hover{
-    cursor: pointer;
-  }
-  #dailyQuotebtnQuoteView:active {
-    transform: scale(0.95);
-  }
-  #dailyQuotebtnQuoteView.dailyImgActive {
-    border: none;
-  }
-  
+#dailyQuotebtn {
+  width: 50%;
+  margin: 0 2%;
+  font-size: 16px;
+  position: relative;
+  border: none;
+  background: #fff;
+  border-radius: 2em;
+  transition: all 0.01s linear;
+  box-shadow: 0 0.6em 1em rgba(0, 0, 0, 0.1);
+}
+#dailyQuotebtn:hover{
+  border:2px solid #313131;
+  cursor: pointer;
+}
+#dailyQuotebtn:active {
+  border:2px solid #313131;
+  transform: scale(0.95);
+}
+/* Daily Quote Botton in Quote View*/
+#dailyQuotebtnQuoteView {
+  width: 50%;
+  margin: 0 2%;
+  font-size: 16px;
+  position: relative;
+  border: 2px solid #313131;
+  background: #fff;
+  border-radius: 2em;
+  transition: all 0.01s linear;
+  box-shadow: 0 0.6em 1em rgba(0, 0, 0, 0.1);
+}
+#dailyQuotebtnQuoteView:hover{
+  cursor: pointer;
+}
+#dailyQuotebtnQuoteView:active {
+  transform: scale(0.95);
+}
+#dailyQuotebtnQuoteView.dailyImgActive {
+  border: none;
+}
 
 
-  .homePage {
-    padding: 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column; /* Align items vertically */
-    align-items: center; /* Center items horizontally */
-  }
-  
-  
-  /* Daily image */
-  #dailyImage img {
-    align-items: center;
-    max-width: 100%; /* Ensure the image doesn't exceed its container's width */
-    height: auto; /* Allow the height to scale proportionally */
-  }
-  
-  /* Copy button */
-  #copyButton {
-    width: 50%;
-    font-size: 100%;
-    margin: 10px;
-    border-radius: 20em; /* Adjust the value to change the roundness of the edges */
-    padding: 10px 2px 10px 2px;
-    background-color: #313131;
-    color: white;
-  }
-  #copyButton:hover {
-    cursor: pointer;
-  }
-  #copyButton:active {
-    transform: scale(0.95);
-  }
 
-  /*
-  make top icons move with the top frame so they arent hidden if scrolling down
-  
-  */
+.homePage {
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Align items vertically */
+  align-items: center; /* Center items horizontally */
+}
 
- 
- 
+
+/* Daily image */
+#dailyImage img {
+  align-items: center;
+  max-width: 100%; /* Ensure the image doesn't exceed its container's width */
+  height: auto; /* Allow the height to scale proportionally */
+}
+
+/* Copy button */
+#copyButton {
+  width: 50%;
+  font-size: 100%;
+  margin: 10px;
+  border-radius: 20em; /* Adjust the value to change the roundness of the edges */
+  padding: 10px 2px 10px 2px;
+  background-color: #313131;
+  color: white;
+}
+#copyButton:hover {
+  cursor: pointer;
+}
+#copyButton:active {
+  transform: scale(0.95);
+}
+
+/*
+make top icons move with the top frame so they arent hidden if scrolling down
+
+*/
+
+#disclaimer {
+  font-size: 12px;
+}
+
+.quoteCopyButton {
+display: flex;
+justify-content: center;
+padding-top: 10%;
+scale: .7;
+}
+
+.dailyQuotePage {
+  padding-top: 10%;
+ display: flex;
+ justify-content: center;
+}

@@ -23,8 +23,8 @@ function generate_html_file($image_url, $output_file) {
             <h1>Good Morning!</h1>
         </div>
         <div id="topMenuLeft">
-            <button id="dailyImagebtn" onclick="window.location.href='imageView.html'"><p>Good Morning Image</p></button>
-            <button id="dailyQuotebtn" onclick="window.location.href='quoteView.html'"><p>Daily Quote</p></button>
+            <button id="dailyImagebtn" onclick="window.location.href='index.html'"><p>Good Morning Image</p></button>
+            <button id="dailyQuotebtn" onclick="window.location.href='quoteView.php'"><p>Daily Quote</p></button>
         </div>
     </section>
 
@@ -35,7 +35,7 @@ function generate_html_file($image_url, $output_file) {
         <button id="copyButton">Copy</button>
     </section>
 
-    <button class="bottomCompressedMenu" onclick="window.location.href='Library.html'"><img src="icons8-library-100.png" alt="Library"></button>
+    <button class="bottomCompressedMenu" onclick="window.location.href='library.php'"><img src="icons8-library-100.png" alt="Library"></button>
 
     <script src="function.js"></script>
     

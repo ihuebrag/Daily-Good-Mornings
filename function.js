@@ -10,6 +10,7 @@ function writeToCanvas(src) {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
     return new Promise((res, rej) => {
+        img.crossOrigin = 'Anonymous';
         img.src = src;
         img.onload = function() {
             canvas.width = img.naturalWidth;
