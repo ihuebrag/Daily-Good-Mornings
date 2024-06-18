@@ -3,6 +3,7 @@
 ## Project Overview
 
 The Good Morning Website is a web application that generates and displays a new good morning image and quote daily. This project aims to provide users with a fresh and positive start to their day through visually appealing images and inspiring quotes.
+Original intent was for family members to use, so there is a mix of English and Spanish images in the library!
 
 ## Features
 
