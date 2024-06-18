@@ -28,20 +28,17 @@ The Good Morning Website is a web application that generates and displays a new 
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/good-morning-website.git
+   git clone https://github.com/ihuebrag/Daily-Good-Mornings.git
    ```
 2. **Navigate to the Project Directory**
    ```bash
-   cd good-morning-website
+   cd Daily-Good-Mornings
    ```
 3. **Upload Files to Your Server**
    Upload the project files to your web server using FTP or any other method.
 
 4. **Set Up Cron Job**
-   Configure a cron job to run the `update.php` script daily to fetch new images and quotes. Example cron job setup:
-   ```bash
-   0 0 * * * /usr/bin/php /path-to-your-project/update.php
-   ```
+   I used cron-job.org so it would be compatible with the host of the website
 
 5. **Access the Website**
    Open your browser and navigate to your domain to see the Good Morning Website in action.
