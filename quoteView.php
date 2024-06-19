@@ -10,27 +10,29 @@
   <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
 </head>
 <body>
-    <section class="topFrame">
-        <div>
+
+    <div class = "mainGrid">
+        <div class="topFrame">
             <h1>Good Morning!</h1>
         </div>
-        <div id="topMenuLeft">
+        <div id="dailyButtons">
             <button id="dailyImagebtnQuoteView" onclick="window.location.href='index.html'"><p>Good Morning Image</p></button>
             <button id="dailyQuotebtnQuoteView" onclick="window.location.href='quoteView.php'"><p>Daily Quote</p></button>
         </div>
-    </class>
 
 
-    <?php include ('quoteGen.php'); ?>
-
-    <div class="quoteCopyButton">
-        <div id="copyButton" onclick="copyContent()">
-            <h3>Copy</h3>
+        <div class="quoteText">
+            <?php include ('quoteGen.php'); ?>
+            <div class="quoteCopyButton">
+                <div id="copyButton" onclick="copyContent()">
+                    <h3>Copy</h3>
+                </div>
+            </div>
         </div>
     </div>
 
 
-    <button class="bottomCompressedMenu" onclick="window.location.href='library.php'"><img src="icons8-library-100.png" alt="Library"></button>
+    <button class="libraryButton" onclick="window.location.href='library.php'"><img src="icons8-library-100.png" alt="Library"></button>
 
     <script>
         const copyButton = document.getElementById('copyButton');
