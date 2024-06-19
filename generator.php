@@ -18,24 +18,32 @@ function generate_html_file($image_url, $output_file) {
   <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
 </head>
 <body>
-    <section class="topFrame">
-        <div>
+    <div class = "mainGrid">
+        <div class="topFrame">
             <h1>Good Morning!</h1>
         </div>
-        <div id="topMenuLeft">
+        <div id="dailyButtons">
             <button id="dailyImagebtn" onclick="window.location.href='index.html'"><p>Good Morning Image</p></button>
             <button id="dailyQuotebtn" onclick="window.location.href='quoteView.php'"><p>Daily Quote</p></button>
         </div>
-    </section>
 
-    <section class="homePage"> 
-        <div id="dailyImage">
-            <img id="dailyImg" src="$image_url" alt="Good Morning Image">
+        <div class="about">
+            <h3> About </h3>  
+            <p> Hello! Welcome to the Good Morning website. 
+                This is a practice project the author of this site came up with to work on Web Development skills.
+                Feel free to look around, explore the library (icon on the right), 
+                and the Daily Quote generator above. And if you're wondering why some 
+                images seem odd, blame AI image generators.</p>
         </div>
-        <button id="copyButton">Copy</button>
-    </section>
 
-    <button class="bottomCompressedMenu" onclick="window.location.href='library.php'"><img src="icons8-library-100.png" alt="Library"></button>
+        <section class="homePage"> 
+            <div id="dailyImage">
+                <img id="dailyImg" src="$image_url" alt="Good Morning Image">
+            </div>
+            <button id="copyButton">Copy</button>
+        </section>
+    </div>
+    <button class="libraryButton" onclick="window.location.href='library.php'"><img src="icons8-library-100.png" alt="Library"></button>
 
     <script src="function.js"></script>
     
