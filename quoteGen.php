@@ -11,7 +11,7 @@ $daily_quote = get_individual_quote_for_the_day($quotes_file, date('z') + 1);
 $quote_parts = explode('"', $daily_quote, 3);
 
 // Reconstructing the quote with the dash and text after the last quotation mark on a new line
-$formatted_quote = '<div class="dailyQuotePage"><p id="quoteText" alt="quote">' . $quote_parts[0] . '"' . $quote_parts[1] . '"<br/><br/>' . $quote_parts[2] . '</p></div>';
+$formatted_quote = '<div class="dailyQuotePage"><p id="quotesText" alt="quote">' . $quote_parts[0] . '"' . $quote_parts[1] . '"<br/><br/>' . $quote_parts[2] . '</p></div>';
 
 echo $formatted_quote;
 
