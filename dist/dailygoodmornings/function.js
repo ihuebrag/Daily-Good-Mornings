@@ -1,14 +1,60 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const dailyImg = document.getElementById('dailyImg');
-    const copyButton = document.getElementById('copyButton');
+    const dailyImgObserver = new MutationObserver((mutations) => {
+        for (let mutation of mutations) {
+            if (mutation.type === 'childList') {
+                const dailyImg = document.getElementById('dailyImg');
+                const copyButton = document.getElementById('copyButton');
+                
+                if (dailyImg && copyButton) {
+                    copyButton.addEventListener('click', () => {
+                        console.log("copying...")
+                        copyToClipboard(dailyImg.src);
+                        console.log("copied")
+                    });
+                    dailyImgObserver.disconnect(); // Stop observing once the elements are found
+                }
+            }
+        }
+    });
 
-    if (dailyImg && copyButton) {
-        copyButton.addEventListener('click', () => {
-            copyToClipboard(dailyImg.src);
+    dailyImgObserver.observe(document.getElementById('dailyImage'), { childList: true });
+
+
+    async function writeToCanvas(src) {
+        const img = new Image();
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+    
+        return new Promise((res, rej) => {
+            img.crossOrigin = 'Anonymous';
+            img.src = src;
+            img.onload = function() {
+                canvas.width = img.naturalWidth;
+                canvas.height = img.naturalHeight;
+                ctx.drawImage(img, 0, 0);
+                canvas.toBlob((blob) => {
+                    res(blob);
+                }, 'image/png'); // Always use 'image/png'
+            };
+            img.onerror = rej;
         });
-    } else {
-        console.error('One or more required elements not found.');
     }
+    
+    async function copyToClipboard(src) {
+        try {
+            const image = await writeToCanvas(src);
+            await navigator.clipboard.write([
+                new ClipboardItem({
+                    'image/png': image,
+                })
+            ]);
+    
+            console.log("Success");
+        } catch(e) {
+            console.error("Copy failed: " + e);
+        }
+    }
+    
 
     /* Changes CSS of buttons based on if daily quote is pressed or not */
 
@@ -42,36 +88,3 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('dailyImageBtnQuoteView not found.');
     }
 });
-
-async function writeToCanvas(src) {
-    const img = new Image();
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-    return new Promise((res, rej) => {
-        img.crossOrigin = 'Anonymous';
-        img.src = src;
-        img.onload = function() {
-            canvas.width = img.naturalWidth;
-            canvas.height = img.naturalHeight;
-            ctx.drawImage(img, 0, 0);
-            canvas.toBlob((blob) => {
-                res(blob);
-            }, 'image/png');
-        };
-    });
-}
-
-async function copyToClipboard(src) {
-    try {
-        const image = await writeToCanvas(src);
-        await navigator.clipboard.write([
-            new ClipboardItem({
-                'image/png': image,
-            })
-        ]);
-
-        console.log("Success");
-    } catch(e) {
-        console.error("Copy failed: " + e);
-    }
-}
