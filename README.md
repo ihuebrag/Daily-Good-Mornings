@@ -8,9 +8,8 @@ Original intent was for family members to use, so there is a mix of English and 
 
 ## Project URL
 
-- The live version of the website can be accessed [here](https://goodmorningmom.000webhostapp.com) (active until May 2025), automated with PHP.
 - Update: new hosting has moved the website [here](https://dailygoodmorning.web.app) (active indefinitely), automated with JS.
-
+- The live version of the website can be accessed [here](https://goodmorningmom.000webhostapp.com) (active until May 2025), automated with PHP.
 
 ## Features
 
