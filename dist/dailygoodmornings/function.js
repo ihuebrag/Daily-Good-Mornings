@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // need an observer because dailyImg element wasn't being found since it is created dynamically through generator.js
     const dailyImgObserver = new MutationObserver((mutations) => {
         for (let mutation of mutations) {
             if (mutation.type === 'childList') {
