@@ -5,6 +5,12 @@
 The Good Morning Website is a web application that generates and displays a new good morning image and quote daily. This project aims to provide users with a fresh and positive start to their day through visually appealing images and inspiring quotes.
 Original intent was for family members to use, so there is a mix of English and Spanish images in the library!
 
+
+## Project URL
+
+- The live version of the website can be accessed [here](https://goodmorningmom.000webhostapp.com) (active until May 2025).
+
+
 ## Features
 
 - **Daily Updates**: Automatically updates with a new image and quote every day.
@@ -48,10 +54,6 @@ Original intent was for family members to use, so there is a mix of English and 
 
 - **Homepage**: Displays the daily good morning image and quote.
 - **Archive**: Allows users to browse previous images and quotes (if implemented).
-
-## Project URL
-
-- The live version of the website can be accessed [here](https://goodmorningmom.000webhostapp.com) (active until May 2025).
 
 ## Contributing
 
