@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "dailygoodmorning",
+    "public": "dist/dailygoodmornings",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
